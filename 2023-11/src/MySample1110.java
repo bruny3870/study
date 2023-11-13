@@ -279,12 +279,12 @@ public class MySample1110 {
 		
 		for (i = 0; i < a.length; i++) {
 			if (i % 2 == 0) {
-				for (j = 0; j < a[i].length; j++) {
+				for (j = 0; j < a[i].length; j++) {			// 짝수열 정방향
 					a[i][j] = k;
 					k++;
 				}
 			} else {
-				for (j = a[i].length - 1; j >= 0; j--) {
+				for (j = a[i].length - 1; j >= 0; j--) {	//홀수열 역방향
 					a[i][j] = k;
 					k++;
 				}
