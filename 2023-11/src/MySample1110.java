@@ -278,13 +278,22 @@ public class MySample1110 {
 		int k = 1;
 		
 		for (i = 0; i < a.length; i++) {
+			if (i % 2 == 0) {
+				for (j = 0; j < a[i].length; j++) {
+					a[i][j] = k;
+					k++;
+				}
+			} else {
+				for (j = a[i].length - 1; j >= 0; j--) {
+					a[i][j] = k;
+					k++;
+				}
+			}
+		}
+		
+		for (i = 0; i < a.length; i++) {
 			for (j = 0; j < a[i].length; j++) {
-				a[i][j] = k;
-				k++;
-				
-				if (i % 2 == 0) {
-					System.out.printf("%3d", a[i][j]);
-				} 
+				System.out.printf("%2d ", a[i][j]);
 			}
 			
 			System.out.println();
