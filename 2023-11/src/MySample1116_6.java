@@ -27,7 +27,7 @@ public class MySample1116_6 {
 //클래스 초기화 블록(딱 1번 호출) -> 인스턴스 초기화 블록 -> 생성자
 class STest {
 	static int cnt;
-	//클래스 초기화		첫번쨰 (1, 2)
+	//클래스 초기화		첫번째 (1, 2)
 	static {
 		test();		//같은 클래스 안 클래스 메소드
 		cnt++;
@@ -41,14 +41,14 @@ class STest {
 		System.out.println("instance block : " + cnt);
 	}
 
-	//생성자			네번째 (6, 7) a 끝		여섯뻔째 (10, 11) b 끝
+	//생성자			네번째 (6, 7) a 끝		여섯번째 (10, 11) b 끝
 	STest() {
 		instanceMethod();
 		cnt++;
 		System.out.println("constructor : " + cnt);
 	}
 	
-	//클래스 메소드		두번쨰 (3) => .test() 있아서 한번 더 출력
+	//클래스 메소드		두번째 (3) => .test() 있아서 한번 더 출력
 	static void test() {
 		cnt++;
 		System.out.println("static method : " + cnt);
