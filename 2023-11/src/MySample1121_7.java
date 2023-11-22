@@ -55,11 +55,26 @@ class Person3 {
 		this.job = job;
 	}
 	
-	public void msgPrint() {
-		if (name.equals("끝")) {
+	//프로그램 종료여부와 출력
+	//return boolean
+//	public boolean msgPrint() {
+//		if (getName().equals("끝")) {
+//			System.out.println("프로그램이 종료되었습니다.");
+//			return true;
+//		} else {
+//			System.out.println(getName() + " 님의 나이는 " + getAge() + "살 이며, 직업은 " + getJob() + " 입니다.");
+//			return false;
+//		}
+//	}
+	
+	//return int
+	public int msgPrint() {
+		if (getName().equals("끝")) {
 			System.out.println("프로그램이 종료되었습니다.");
+			return 1;
 		} else {
 			System.out.println(getName() + " 님의 나이는 " + getAge() + "살 이며, 직업은 " + getJob() + " 입니다.");
+			return 0;
 		}
 	}
 }
@@ -69,19 +84,42 @@ public class MySample1121_7 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//접근 제어자
+		/*
+		 trim() : 문자열의 맨 앞과 맨 뒤 공백만 제거
+		 replace(" ", "") : 문자열에서 첫번째 인수를 찾아 두번째 인수로 변경
+		 replaceAll(" ", "") : 문자열에서 첫번째 인수를 찾아 두번째 인수로 변경
+		 */
+//		String tmp = "   홍길동   ";
+//		System.out.println("[" + tmp + "]");
+//		System.out.println("trim() : [" + tmp.trim() + "]");
+//		System.out.println("replace() : [" + tmp.replace(" ", "") + "]");		//공백을 공백없음으로 변경
+//		System.out.println("replaceAll() : [" + tmp.replaceAll(" ", "") + "]");
+		//replace 와 replaceAll 은 비슷함
+		
 		Scanner sc = new Scanner(System.in);
-		Person3 p = new Person3();
+		Person3 p = new Person3();			//while 안에 선언시 무한 생성으로 메모리 낭비 주의
 		
-		System.out.print("이름 => ");
-		p.setName(sc.next());
-		
-		System.out.print("나이 => ");
-		p.setAge(sc.nextInt());
-		
-		System.out.print("직업 => ");
-		p.setJob(sc.next());
-		
-		p.msgPrint();
+		//무한루프
+		while (true) {
+			System.out.print("이름 => ");
+			p.setName(sc.next());			//nextLine()메소드는 엔터키값을 가지고 있어 next()메소드 사용
+			
+			System.out.print("나이 => ");
+			p.setAge(sc.nextInt());
+			
+			System.out.print("직업 => ");
+			p.setJob(sc.next());
+			
+			//return boolean
+//			if (p.msgPrint() == true) {
+//				break;
+//			}
+			
+			//return int
+			if (p.msgPrint() == 1) {
+				break;
+			}
+		}
 	}
 
 }
