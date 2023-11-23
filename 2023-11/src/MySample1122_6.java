@@ -31,6 +31,7 @@ public class MySample1122_6 {
 		
 		//업-캐스팅
 		Parent3 p2 = new Child3();
+		//인스턴스변수
 		//부모 있음, 자식 있음 -> 자식 실행
 		//부모 있음, 자식 없음 -> 부모 실행
 		//부모 없음, 자식 있음 -> 오류
@@ -39,6 +40,7 @@ public class MySample1122_6 {
 		System.out.println(p2 instanceof Parent3);			//true
 		System.out.println(p2 instanceof Child3);			//true
 //		p2.methodA();										//참조 가능, 접근 불가능
+		//p2가 Child3 객체를 가리키지만 p2는 Parent3 타입이기 때문에 Parent3 클래스 멤버에만 접근 가능
 		
 		
 		System.out.println();
