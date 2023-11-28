@@ -1,40 +1,17 @@
 package abs1;
 
 public class Cat extends Animal {
-	private String move;
-	private String eat;
-	
-	Cat() {
-		
+	//생성자
+	Cat(String name, int age) {
+		super(name, age);
 	}
 	
-	Cat(String name, int age, String move, String eat) {
-		setName(name);
-		setAge(age);
-		setMove(move);
-		setEat(eat);
-	}
-	
-	public String getMove() {
-		return this.move;
-	}
-	
-	public void setMove(String move) {
-		this.move = move;
-		System.out.println(getMove());
-	}
-	
-	public String getEat() {
-		return this.eat;
-	}
-	
-	public void setEat(String eat) {
-		this.eat = eat;
-		System.out.println(getEat());
+	void cat() {
+		System.out.println(name + "는 " + age + "살 입니다.");
 	}
 	
 	@Override
-	public void bark() {
-		System.out.println("짖는다");
+	void bark() {
+		System.out.println("야옹");
 	}
 }

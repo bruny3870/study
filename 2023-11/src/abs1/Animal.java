@@ -11,26 +11,27 @@ package abs1;
  		야옹
  		먹는다
  */
-
+//추상클래스
 public abstract class Animal {
-	private String name;
-	private int age;
+	String name;
+	int age;
 	
-	public String getName() {
-		return this.name;
-	}
-	
-	public void setName(String name) {
+	//생성자
+	Animal(String name, int age) {
 		this.name = name;
-	}
-	
-	public int getAge() {
-		return this.age;
-	}
-	
-	public void setAge(int age) {
 		this.age = age;
 	}
 	
-	public abstract void bark();
+	//메소드
+	void move() {
+		System.out.println("이동한다.");
+	}
+	
+	//메소드
+	void eat() {
+		System.out.println("먹는다.");
+	}
+	
+	//추상메소드
+	abstract void bark();		//동물마다 짖는 소리는 다르므로 추상메소드로 생성
 }
